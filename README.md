@@ -22,7 +22,7 @@
 
 ## Overview
 
-\_**Thought Vomit** Is a writing tool for generating ideas without getting tripped up by one's ego or self-consciousness. Thought Vomit offers the opportunity to create free-association, stream of consciousness writings while simulating the technique of blind contour drawing. The user is presented with a text field, but all of the characters typed in this area will be obscured by hash marks. When finished, they can choose to discard what they've written immediately or save for future polishing. They will also have the option to categorize the vomit's mood for better organization. The moods include:
+**Thought Vomit** Is a writing tool for generating ideas without getting tripped up by one's ego or self-consciousness. Thought Vomit offers the opportunity to create free-association, stream of consciousness writings while simulating the technique of blind contour drawing. The user is presented with a text field, but all of the characters typed in this area will be obscured by hash marks. When finished, they can choose to discard what they've written immediately or save for future polishing. They will also have the option to categorize the vomit's mood for better organization. The moods include:
 
 - Humor
 - Joy
@@ -36,14 +36,14 @@
 
 > The Minimum Viable Product should be a well-planned, easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
 
-\_The **Thought Vomit** MVP will have the concept of a user with secure login functionality. The user will be able to create and save Thought Vomits to their account, edit them and delete them.
+The **Thought Vomit** MVP will have the concept of a user with secure login functionality. The user will be able to create and save Thought Vomits to their account, edit them and delete them.
 
 <br>
 
 ### Goals
 
 - _The landing page with text field will be available before sign in, but will prompt sign in/register once the user chooses to save (if not already logged in)_
-- \_User login will require secure password authentication
+- User login will require secure password authentication
 - _Text will be obscured upon typing_
 - _Design will be clean and easy to navigate. A pleasure to use._
 - _Vomit edit option will allow for formatting (i.e. bullet points, etc)._
@@ -59,7 +59,7 @@
 | :-------------------------------------------------------------------------: | :--------------------------- |
 |                                    React                                    | _Front end development._     |
 |                                React Router                                 | _App navigation._            |
-| (React SemanticUI[https://semantic-ui.com/collections/form.html#text-area]) | _Customizable forms._        |
+| [React SemanticUI](https://semantic-ui.com/collections/form.html#text-area) | _Customizable forms._        |
 |             [TinyMCE](https://github.com/tinymce/tinymce-react)             | _Text editor/WYSIWIG._       |
 |                                    Rails                                    | _Backend server development_ |
 
@@ -71,24 +71,24 @@
 
 > Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
 
-![Overview](https://www.figma.com/file/4pM10gtRvHqdeOrSKZjohi/Thought-Vomit?node-id=0%3A1)
+[Overview](https://www.figma.com/file/4pM10gtRvHqdeOrSKZjohi/Thought-Vomit?node-id=0%3A1)
 
 Assets:
-(background img)[https://images.unsplash.com/photo-1586076100131-32505c71d0d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80]
+[background img](https://images.unsplash.com/photo-1586076100131-32505c71d0d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80)
 
 Subtitle font options:
-(Changa)[https://fonts.google.com/specimen/Changa?preview.text=Let%20it%20out&preview.text_type=custom]
+[Changa](https://fonts.google.com/specimen/Changa?preview.text=Let%20it%20out&preview.text_type=custom)
 Color: 3C3A8D
-(Amatic SC)[https://fonts.google.com/specimen/Amatic+SC?sidebar.open=true&selection.family=Amatic+SC]
+[Amatic SC](https://fonts.google.com/specimen/Amatic+SC?sidebar.open=true&selection.family=Amatic+SC)
 
 Title font options:
-(Special Elite)[https://fonts.google.com/specimen/Special+Elite]
+[Special Elite](https://fonts.google.com/specimen/Special+Elite)
 Color: 368C44
-(Rajdhani)[https://fonts.google.com/specimen/Rajdhani]
-(Tajawal)[https://fonts.google.com/specimen/Tajawal]
+[Rajdhani](https://fonts.google.com/specimen/Rajdhani)
+[Tajawal](https://fonts.google.com/specimen/Tajawal)
 
 Main font options:
-(IBM Plex Mono)[https://fonts.google.com/specimen/IBM+Plex+Mono]
+[IBM Plex Mono](https://fonts.google.com/specimen/IBM+Plex+Mono)
 
 #### Component Tree
 
@@ -103,6 +103,7 @@ Main font options:
 src
 |__ components/
       |__ Header.jsx
+      |__ Thought.jsx
 |__ containers/
       |__ MainContainer.jsx
 |__ layouts/
@@ -145,7 +146,7 @@ src
 
 #### ERD Model
 
-(ERD)[https://drive.google.com/file/d/1S506bp05vg0SCxrGtLBrwBqVYLWdbqRA/view?usp=sharing]
+[ERD](https://drive.google.com/file/d/1S506bp05vg0SCxrGtLBrwBqVYLWdbqRA/view?usp=sharing)
 
 <br>
 
