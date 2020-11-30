@@ -69,9 +69,7 @@ The **Thought Vomit** MVP will have the concept of a user with secure login func
 
 #### Wireframes
 
-> Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
-
-[Overview](https://www.figma.com/file/4pM10gtRvHqdeOrSKZjohi/Thought-Vomit?node-id=0%3A1)
+[Wireframes](https://www.figma.com/file/4pM10gtRvHqdeOrSKZjohi/Thought-Vomit?node-id=0%3A1)
 
 Assets:
 [background img](https://images.unsplash.com/photo-1586076100131-32505c71d0d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80)
