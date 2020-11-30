@@ -36,7 +36,7 @@
 
 > The Minimum Viable Product should be a well-planned, easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
 
-The **Thought Vomit** MVP will have the concept of a user with secure login functionality. The user will be able to create and save Thought Vomits to their account, edit them and delete them.
+The **Thought Vomit** MVP will have the concept of a user with secure login functionality. The user will be able to create and save Thought Vomits to their account, edit them and delete them. When typing in the initial thought creation text-area, text will be obscured as the user types.
 
 <br>
 
@@ -82,6 +82,7 @@ Color: 3C3A8D
 Title font options:
 [Special Elite](https://fonts.google.com/specimen/Special+Elite)
 Color: 368C44
+
 [Rajdhani](https://fonts.google.com/specimen/Rajdhani)
 [Tajawal](https://fonts.google.com/specimen/Tajawal)
 
