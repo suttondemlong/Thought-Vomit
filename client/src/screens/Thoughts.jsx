@@ -11,7 +11,7 @@ function Thoughts(props) {
               <React.Fragment key={thought.id}>
                 <Link to={`/thoughts/${thought.id}`}><p>{thought.title}</p></Link>
                 <p>{thought.content}</p>
-                <Link to='/thoughts/edit'><button>Polish</button></Link>
+                <Link to={`/thoughts/${thought.id}/edit`} ><button>Polish</button></Link>
                 <button onClick={() => props.handleDelete(thought.id)}>Delete</button>
               </React.Fragment>
           </>

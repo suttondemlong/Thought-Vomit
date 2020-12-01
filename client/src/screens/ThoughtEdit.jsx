@@ -10,7 +10,7 @@ function ThoughtEdit(props) {
 
   useEffect(() => {
     const prefillForm = () => {
-      const thoughtItem = props.thought.find(thought => thought.id === Number(id));
+      const thoughtItem = props.thoughts.find(thought => thought.id === Number(id));
       setFormData({
         title: thoughtItem.title,
         content: thoughtItem.content
@@ -35,7 +35,7 @@ function ThoughtEdit(props) {
       e.preventDefault();
       props.handleUpdate(formData);
     }}>
-      <h3>Polish that turd</h3>
+      <h3>Polish</h3>
       <label>Title:
         <input
           type='text'

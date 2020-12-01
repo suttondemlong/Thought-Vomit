@@ -14,6 +14,7 @@ function MainContainer(props) {
     const fetchThoughts = async () => {
       const thoughtsData = await getAllThoughts();
       setThoughts(thoughtsData)
+      // console.log(thoughts)
     }
     fetchThoughts()
   }, [thoughts.length])
@@ -40,22 +41,21 @@ function MainContainer(props) {
 
   return (
     <Switch>
-      <Route path='/thoughts/new'>
-        <ThoughtEdit
-          thoughts={thoughts}
-          handleUpdate={handleUpdate}
-        />
-
-      <Route path='/thoughts/edit'>
-        <ThoughtCreate handleCreate={handleCreate} />
-        </Route>
-        
-      </Route>
-      <Route path='/thoughts'>
+      <Route exact path='/thoughts'>
         <Thoughts
           thoughts={thoughts}
           handleDelete={handleDelete} />
       </Route>
+      <Route path='/thoughts/new'>
+        <ThoughtCreate handleCreate={handleCreate} />
+      </Route>
+      <Route path='/thoughts/:id/edit'>
+        <ThoughtEdit
+          thoughts={thoughts}
+          handleUpdate={handleUpdate}
+        />
+      </Route>
+        
 
     </Switch>
   );
