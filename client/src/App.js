@@ -4,6 +4,7 @@ import { Switch, Route, useHistory } from 'react-router-dom';
 import './App.css';
 import Layout from './layouts/Layout';
 import Login from './screens/Login';
+import ThoughtCreate from './screens/ThoughtCreate';
 import { loginUser, registerUser, removeToken, verifyUser } from './services/auth';
 
 
@@ -42,14 +43,22 @@ function App() {
   }
 
   return (
-    <Layout>
+    <Layout
+      currentUser={currentUser}
+      handleLogout={handleLogout}
+    >
       <Switch>
         <Route path='/login'>
-          <Login handleLogin={handleLogin} />
+          <Login
+            handleLogin={handleLogin}
+            handleLogout={handleLogout}
+          />
         </Route>
+
         <Route path='/'>
-          {/* <MainContainer currentUser={currentUser} /> */}
+          <ThoughtCreate currentuser={currentUser}/>
         </Route>
+
       </Switch>
       </Layout>
   );

@@ -2,10 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Header(props) {
+  const { currentUser, handleLogout } = props;
   return (
     <div>
       <h1>Thought Vomit</h1>
-      <Link to='/login'>Login/Register</Link>
+      {
+        currentUser ?
+          <Link to='/' onClick={handleLogout}>Logout</Link>
+          :
+          <Link to='/login'>Login/Register</Link>
+      }
+      <hr/>
     </div>
   );
 }
