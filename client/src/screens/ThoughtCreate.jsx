@@ -19,7 +19,7 @@ function ThoughtCreate(props) {
       e.preventDefault();
       props.handleCreate(formData);
     }}>
-      <h3>Let it out.</h3>
+      <h3>Create</h3>
       <label>
         <input
           type='textarea'

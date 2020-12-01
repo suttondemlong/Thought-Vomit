@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Switch, Route, useHistory } from 'react-router-dom';
 
-import ThoughtCreate from '../screens/ThoughtCreate';
 import Thoughts from '../screens/Thoughts';
+import ThoughtCreate from '../screens/ThoughtCreate';
+import ThoughtEdit from '../screens/ThoughtEdit';
 import { destroyThought, getAllThoughts, postThought, putThought } from '../services/thoughts';
 
 function MainContainer(props) {
@@ -13,7 +14,6 @@ function MainContainer(props) {
     const fetchThoughts = async () => {
       const thoughtsData = await getAllThoughts();
       setThoughts(thoughtsData)
-      console.log(thoughts)
     }
     fetchThoughts()
   }, [thoughts.length])
@@ -21,6 +21,14 @@ function MainContainer(props) {
   const handleCreate = async (thoughtData) => {
     const newThought = await postThought(thoughtData);
     setThoughts(prevState => [...prevState, newThought]);
+    history.push('/thoughts');
+  }
+
+  const handleUpdate = async (id, thoughtData) => {
+    const updatedThought = await putThought(id, thoughtData);
+    setThoughts(prevState => prevState.map(thought => {
+      return thought.id === Number(id) ? updatedThought : thought
+    }))
     history.push('/thoughts');
   }
 
@@ -33,13 +41,22 @@ function MainContainer(props) {
   return (
     <Switch>
       <Route path='/thoughts/new'>
+        <ThoughtEdit
+          thoughts={thoughts}
+          handleUpdate={handleUpdate}
+        />
+
+      <Route path='/thoughts/edit'>
         <ThoughtCreate handleCreate={handleCreate} />
+        </Route>
+        
       </Route>
       <Route path='/thoughts'>
         <Thoughts
           thoughts={thoughts}
           handleDelete={handleDelete} />
       </Route>
+
     </Switch>
   );
 }
