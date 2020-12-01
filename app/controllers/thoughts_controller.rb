@@ -1,6 +1,7 @@
 class ThoughtsController < ApplicationController
-  before_action :authorize_request, only: [:create, :update, :destroy]
-  before_action :set_user_thought, only: [:update, :destroy]
+  before_action :authorize_request, only: [:create, :update, :destroy, :show, :index]
+  before_action :set_thought, only: [:update, :destroy, :show]
+  #before_action :set_user_thought, only: [:update, :destroy, :show]
 
   # GET /thoughts
   def index
@@ -53,12 +54,12 @@ class ThoughtsController < ApplicationController
       @thought = Thought.find(params[:id])
     end
 
-    def set_user_thought
-      @thought = @current_user.thoughts.find(params[:id])
-    end
+    # def set_user_thought
+    #   @thought = @current_user.thoughts.find(params[:id])
+    # end
 
     # Only allow a trusted parameter "white list" through.
     def thought_params
-      params.require(:thought).permit(:name, :user_id)
+      params.require(:thought).permit(:title, :user_id)
     end
 end
