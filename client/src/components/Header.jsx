@@ -13,6 +13,7 @@ function Header(props) {
           <Link to='/login'>Login/Register</Link>
       }
       <Link to='/thoughts'>Thoughts</Link>
+      <Link to='/thoughts/new'>New</Link>
       <hr/>
     </div>
   );

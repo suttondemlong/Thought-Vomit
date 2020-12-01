@@ -5,6 +5,7 @@ import './App.css';
 import MainContainer from './containers/MainContainer';
 import Layout from './layouts/Layout';
 import Login from './screens/Login';
+import ThoughtCreate from './screens/ThoughtCreate';
 import { loginUser, registerUser, removeToken, verifyUser } from './services/auth';
 
 

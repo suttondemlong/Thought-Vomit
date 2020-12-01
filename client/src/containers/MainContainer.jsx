@@ -24,13 +24,21 @@ function MainContainer(props) {
     history.push('/thoughts');
   }
 
+  const handleDelete = async (id) => {
+    await destroyThought(id);
+    setThoughts(prevState => prevState.filter(thought => thought.id !== id))
+  }
+
+
   return (
     <Switch>
       <Route path='/thoughts/new'>
-        <ThoughtCreate handleCreate={handleCreate}/>
+        <ThoughtCreate handleCreate={handleCreate} />
       </Route>
       <Route path='/thoughts'>
-        <Thoughts thoughts={thoughts}/>
+        <Thoughts
+          thoughts={thoughts}
+          handleDelete={handleDelete} />
       </Route>
     </Switch>
   );
