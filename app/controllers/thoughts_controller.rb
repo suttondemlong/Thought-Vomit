@@ -60,6 +60,6 @@ class ThoughtsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def thought_params
-      params.require(:thought).permit(:title, :user_id)
+      params.require(:thought).permit(:title, :content, :user_id)
     end
 end

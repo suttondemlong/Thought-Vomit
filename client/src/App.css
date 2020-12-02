@@ -12,6 +12,14 @@ font-family: 'Special Elite', cursive; */
 .header-container {
   padding: 30px;
 }
+.title {
+  font-family: "Special Elite";
+}
+
+#page-title {
+  font-size: 40px;
+  margin: 20px 30px;
+}
 
 .navLink {
   flex-flow: row;

@@ -20,13 +20,15 @@ function ThoughtCreate(props) {
     console.log(formData)
   }
 
+  const trashThought = (e) => {
+    e.preventDefault();
+    setFormData({
+      content: ''
+    })
+  }
+
   return (
-    <form
-      // onSubmit={(e) => {
-      // e.preventDefault();
-      // props.handleCreate(formData);
-      // }}
-    >
+    <form>
       <h3>Create</h3>
       <label>
         <input
@@ -37,7 +39,7 @@ function ThoughtCreate(props) {
         />
       </label>
       <button onClick={saveThought}>keep</button>
-      <button>Trash</button>
+      <button onClick={trashThought}>Trash</button>
     </form>
   );
 }

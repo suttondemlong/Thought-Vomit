@@ -11,6 +11,8 @@ function MainContainer(props) {
   const [thoughts, setThoughts] = useState([]);
   const history = useHistory();
 
+  const { currentUser } = props;
+
   useEffect(() => {
     const fetchThoughts = async () => {
       const thoughtsData = await getAllThoughts();
@@ -18,7 +20,7 @@ function MainContainer(props) {
       // console.log(thoughts)
     }
     fetchThoughts()
-  }, [thoughts.length])
+  }, [])
 
   const handleCreate = async (thoughtData) => {
     const newThought = await postThought(thoughtData);
@@ -47,7 +49,7 @@ function MainContainer(props) {
         <Thoughts
           thoughts={thoughts}
           handleDelete={handleDelete}
-          currentUser={props.currentUser}
+          currentUser={currentUser}
         />
       </Route>
       <Route path='/thoughts/new'>
