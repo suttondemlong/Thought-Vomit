@@ -14,11 +14,19 @@ function ThoughtCreate(props) {
     }))
   }
 
+  const saveThought = (e) => {
+    e.preventDefault();
+    props.handleCreate(formData)
+    console.log(formData)
+  }
+
   return (
-    <form onSubmit={(e) => {
-      e.preventDefault();
-      props.handleCreate(formData);
-    }}>
+    <form
+      // onSubmit={(e) => {
+      // e.preventDefault();
+      // props.handleCreate(formData);
+      // }}
+    >
       <h3>Create</h3>
       <label>
         <input
@@ -28,7 +36,7 @@ function ThoughtCreate(props) {
           onChange={handleChange}
         />
       </label>
-      <button>Keep</button>
+      <button onClick={saveThought}>keep</button>
       <button>Trash</button>
     </form>
   );

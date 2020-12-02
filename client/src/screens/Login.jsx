@@ -16,6 +16,7 @@ function Login(props) {
   }
 
   return (
+    <div>
     <form onSubmit={(e) => {
       e.preventDefault();
       props.handleLogin(formData);
@@ -41,6 +42,9 @@ function Login(props) {
       <br />
       <button>Submit</button>
     </form>
+    <Link to="/register">Create New Account</Link>
+    </div>
+
   );
 }
 

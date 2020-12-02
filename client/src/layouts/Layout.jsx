@@ -1,11 +1,13 @@
 import Header from '../components/Header';
 
 function Layout(props) {
+  const { currentUser, handleLogout } = props;
+
   return (
     <div className="App">
       <Header
-        currentUser={props.currentuser}
-        handleLogout={props.handleLogout}
+        currentUser={currentUser}
+        handleLogout={handleLogout}
       />
       {props.children}
     </div>

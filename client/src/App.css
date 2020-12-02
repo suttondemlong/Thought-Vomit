@@ -1,3 +1,7 @@
+/* font-family: 'Changa', sans-serif;
+font-family: 'IBM Plex Mono', monospace;
+font-family: 'Special Elite', cursive; */
+
 .App {
   text-align: center;
   background-image: url("https://images.unsplash.com/photo-1586076100131-32505c71d0d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80");
@@ -6,17 +10,16 @@
 }
 
 .header-container {
-  padding: 50px;
+  padding: 30px;
 }
 
 .navLink {
   flex-flow: row;
-  display: inline-block;
-  justify-content: flex-start;
-  align-items: space-between;
-  padding: 10px;
+  text-decoration: none;
+  padding: 20px;
+  font-family: "Changa", sans-serif;
 }
 
 .navBar {
-  align-items: space-between;
+  justify-content: space-between;
 }

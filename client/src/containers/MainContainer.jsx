@@ -4,6 +4,7 @@ import { Switch, Route, useHistory } from 'react-router-dom';
 import Thoughts from '../screens/Thoughts';
 import ThoughtCreate from '../screens/ThoughtCreate';
 import ThoughtEdit from '../screens/ThoughtEdit';
+import Register from '../screens/Register';
 import { destroyThought, getAllThoughts, postThought, putThought } from '../services/thoughts';
 
 function MainContainer(props) {
@@ -22,6 +23,7 @@ function MainContainer(props) {
   const handleCreate = async (thoughtData) => {
     const newThought = await postThought(thoughtData);
     setThoughts(prevState => [...prevState, newThought]);
+    console.log(newThought)
     history.push('/thoughts');
   }
 
@@ -44,7 +46,9 @@ function MainContainer(props) {
       <Route exact path='/thoughts'>
         <Thoughts
           thoughts={thoughts}
-          handleDelete={handleDelete} />
+          handleDelete={handleDelete}
+          currentUser={props.currentUser}
+        />
       </Route>
       <Route path='/thoughts/new'>
         <ThoughtCreate handleCreate={handleCreate} />
@@ -54,6 +58,9 @@ function MainContainer(props) {
           thoughts={thoughts}
           handleUpdate={handleUpdate}
         />
+      </Route>
+      <Route path='/register'>
+        <Register handleRegister={props.handleRegister}/>
       </Route>
         
 
