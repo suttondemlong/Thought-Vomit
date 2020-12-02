@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   post '/auth/login', to: 'authentication#login'
   get '/auth/verify', to: 'authentication#verify'
   resources :users
+  put '/moods/:mood_id/thoughts/:id', to: 'thoughts#add_mood'
 end

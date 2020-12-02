@@ -5,10 +5,13 @@ import Thoughts from '../screens/Thoughts';
 import ThoughtCreate from '../screens/ThoughtCreate';
 import ThoughtEdit from '../screens/ThoughtEdit';
 import Register from '../screens/Register';
+import Moods from '../components/Moods'
 import { destroyThought, getAllThoughts, postThought, putThought } from '../services/thoughts';
+import { getAllMoods } from '../services/moods';
 
 function MainContainer(props) {
   const [thoughts, setThoughts] = useState([]);
+  const [moods, setMoods] = useState([]);
   const history = useHistory();
 
   const { currentUser } = props;
@@ -17,9 +20,18 @@ function MainContainer(props) {
     const fetchThoughts = async () => {
       const thoughtsData = await getAllThoughts();
       setThoughts(thoughtsData)
-      // console.log(thoughts)
+      console.log(thoughts)
     }
     fetchThoughts()
+  }, [])
+  
+  useEffect(() => {
+    const fetchMoods = async () => {
+      const moodData = await getAllMoods();
+      setMoods(moodData)
+      console.log(moods)
+    }
+    fetchMoods()
   }, [])
 
   const handleCreate = async (thoughtData) => {
@@ -48,12 +60,16 @@ function MainContainer(props) {
       <Route exact path='/thoughts'>
         <Thoughts
           thoughts={thoughts}
+          // moods={moods}
           handleDelete={handleDelete}
           currentUser={currentUser}
         />
       </Route>
       <Route path='/thoughts/new'>
-        <ThoughtCreate handleCreate={handleCreate} />
+        <ThoughtCreate
+          handleCreate={handleCreate}
+          moods={moods}
+        />
       </Route>
       <Route path='/thoughts/:id/edit'>
         <ThoughtEdit
@@ -64,8 +80,6 @@ function MainContainer(props) {
       <Route path='/register'>
         <Register handleRegister={props.handleRegister}/>
       </Route>
-        
-
     </Switch>
   );
 }

@@ -16,7 +16,13 @@ font-family: 'Special Elite', cursive; */
   font-family: "Special Elite";
 }
 
+.subtitle {
+  font-family: "Changa", sans-serif;
+}
+
 #page-title {
+  text-decoration: none;
+  color: #368c44;
   font-size: 40px;
   margin: 20px 30px;
 }
@@ -30,4 +36,13 @@ font-family: 'Special Elite', cursive; */
 
 .navBar {
   justify-content: space-between;
+}
+
+.thoughts-container {
+  display: flex;
+}
+
+.thoughts {
+  display: flex;
+  width: 250px;
 }

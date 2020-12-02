@@ -7,7 +7,7 @@ function Header(props) {
 
   return (
     <div className='header-container'>
-      <div className="title" id="page-title">Thought Vomit</div>
+      <Link to='/' className="title" id="page-title">Thought Vomit</Link>
       <div className='navBar'>
         {
           currentUser ?

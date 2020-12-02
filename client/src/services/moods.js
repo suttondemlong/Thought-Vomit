@@ -5,7 +5,7 @@ export const getAllMoods = async () => {
   return resp.data;
 }
 
-export const addMood = async (moodId, thoughId) => {
+export const addMood = async (moodId, thoughtId) => {
   const resp = await api.put(`/moods/${moodId}/thoughts/${thoughtId}`);
   return resp.data;
 }
