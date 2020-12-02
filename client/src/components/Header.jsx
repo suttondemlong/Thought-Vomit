@@ -1,20 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../App.css';
 
 function Header(props) {
   const { currentUser, handleLogout } = props;
   return (
-    <div>
+    <div className='header-container'>
       <h1>Thought Vomit</h1>
-      {
-        currentUser ?
-          <Link to='/' onClick={handleLogout}>Logout</Link>
-          :
-          <Link to='/login'>Login/Register</Link>
-      }
-      <Link to='/thoughts'>Thoughts</Link>
-      <Link to='/thoughts/new'>New</Link>
-      <hr/>
+      <div className='navBar'>
+        {
+          currentUser ?
+            <Link className='navLink' to='/' onClick={handleLogout}>Logout</Link>
+            :
+            <Link className='navLink' to='/login'>Login/Register</Link>
+        }
+        <Link className='navLink' to='/thoughts'>Thoughts</Link>
+        <Link className='navLink' to='/thoughts/new'>New</Link>
+      </div>
     </div>
   );
 }

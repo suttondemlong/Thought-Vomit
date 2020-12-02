@@ -1,3 +1,22 @@
 .App {
   text-align: center;
+  background-image: url("https://images.unsplash.com/photo-1586076100131-32505c71d0d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80");
+  background-size: 100vw;
+  height: 100vh;
+}
+
+.header-container {
+  padding: 50px;
+}
+
+.navLink {
+  flex-flow: row;
+  display: inline-block;
+  justify-content: flex-start;
+  align-items: space-between;
+  padding: 10px;
+}
+
+.navBar {
+  align-items: space-between;
 }
