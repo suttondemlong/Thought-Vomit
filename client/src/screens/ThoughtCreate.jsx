@@ -17,6 +17,7 @@ function ThoughtCreate(props) {
   }
 
   const saveThought = (e) => {
+    debugger
     e.preventDefault();
     props.handleCreate(formData)
   }
