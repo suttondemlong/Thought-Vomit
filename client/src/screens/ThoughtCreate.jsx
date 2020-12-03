@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { addMood } from '../services/moods';
 
 function ThoughtCreate(props) {
@@ -66,8 +67,12 @@ function ThoughtCreate(props) {
           </label>
         ))
       }
-      <br/>
-      <button>keep</button>
+      <br />
+      {
+      props.currentuser ? 
+          <button>keep</button> :
+          <Link to="/login"><button>keep</button></Link>
+      }
       <button onClick={trashThought}>Trash</button>
     </form>
   );
