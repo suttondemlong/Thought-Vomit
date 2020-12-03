@@ -54,7 +54,7 @@ function ThoughtEdit(props) {
           e.preventDefault();
           props.handleUpdate(id, formData)
         }}>Save It</button>
-      <button >Trash</button>
+      <button onClick={() => props.handleDelete(formData?.id)}>Delete</button>
     </form>
     </div>
   );
