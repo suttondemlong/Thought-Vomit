@@ -17,6 +17,7 @@ function Header(props) {
         }
         <Link className='navLink' to='/thoughts'>Thoughts</Link>
         <Link className='navLink' to='/thoughts/new'>New</Link>
+        <Link className='navLink' to='/about'>What is this?</Link>
       </div>
     </div>
   );

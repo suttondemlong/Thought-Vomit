@@ -11,7 +11,16 @@ function About(props) {
         Or pontificate and wax poetic in a flow state without worrying about typos or grammar.
         If you feel you wrote something worthwhile, save it and polish it up later. 
       </p>
+      <div>
+        {props.moods.map(mood => (
+          <>
+            <h5>{mood.name}</h5>
+            <p>{mood.description}</p>
+          </>
+        ))}
+      </div>
     </div>
+
   );
 }
 

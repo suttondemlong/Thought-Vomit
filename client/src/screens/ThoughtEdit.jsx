@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 
 function ThoughtEdit(props) {
+  const { id } = useParams();
+
   const [formData, setFormData] = useState({
     title: '',
     content: ''
   })
-  const { id } = useParams();
 
   useEffect(() => {
     const prefillForm = () => {
@@ -31,10 +32,7 @@ function ThoughtEdit(props) {
 
   return (
     <div>
-      <form onSubmit={(e) => {
-      e.preventDefault();
-      props.handleUpdate(formData);
-    }}>
+      <form>
       <h3>Polish</h3>
       <label>Title:
         <input
@@ -52,8 +50,11 @@ function ThoughtEdit(props) {
           onChange={handleChange}
         />
       </label>
-      <button>Keep</button>
-      <button>Trash</button>
+        <button onClick={(e) => {
+          e.preventDefault();
+          props.handleUpdate(id, formData)
+        }}>Save It</button>
+      <button >Trash</button>
     </form>
     </div>
   );
