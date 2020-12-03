@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { useParams} from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 function ThoughtEdit(props) {
   const { id } = useParams();
+  const history = useHistory();
 
   const [formData, setFormData] = useState({
     title: '',
@@ -54,7 +55,11 @@ function ThoughtEdit(props) {
           e.preventDefault();
           props.handleUpdate(id, formData)
         }}>Save It</button>
-      <button onClick={() => props.handleDelete(formData?.id)}>Delete</button>
+        <button onClick={(e) => {
+          e.preventDefault();
+          props.handleDelete(id);
+          history.push('/thoughts');
+        }}>Delete</button>
     </form>
     </div>
   );
