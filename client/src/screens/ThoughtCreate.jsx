@@ -8,6 +8,10 @@ function ThoughtCreate(props) {
     content: ''
   })
 
+  const [chosenMoods, setChosenMoods] = useState([])
+
+
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevState => ({
@@ -17,9 +21,11 @@ function ThoughtCreate(props) {
   }
 
   const saveThought = (e) => {
-    debugger
     e.preventDefault();
-    props.handleCreate(formData)
+    props.handleCreate({
+      ...formData,
+      moods: chosenMoods
+    })
   }
 
   const trashThought = (e) => {
@@ -29,8 +35,16 @@ function ThoughtCreate(props) {
     })
   }
 
+  const handleCheckBoxChange = (e) => {
+    if (e.target.checked) {
+      setChosenMoods(prevState => [...prevState, e.target.value])
+    } else {
+      setChosenMoods(prevState => prevState.filter((id) => id !== e.target.value))
+    }
+  }
+
   return (
-    <form>
+    <form onSubmit={saveThought}>
       <h3 className="title">Create</h3>
       <label>
         <textarea
@@ -41,8 +55,19 @@ function ThoughtCreate(props) {
           onChange={handleChange}
         />
       </label>
+      {
+        moods.map((mood) => (
+          <label>{mood.name}
+            <input
+              type='checkbox'
+              value={mood.id}
+              onChange={handleCheckBoxChange}
+            />
+          </label>
+        ))
+      }
       <br/>
-      <button onClick={() => saveThought()}>keep</button>
+      <button>keep</button>
       <button onClick={trashThought}>Trash</button>
     </form>
   );

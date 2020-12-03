@@ -17,19 +17,22 @@ class ThoughtsController < ApplicationController
 
   # POST /thoughts
   def create
-    @thought = Thought.new(thought_params)
+    @thought = Thought.new(thought_params.except(:moods))
     @thought.user = @current_user
-
+    @thought.moods = thought_params[:moods].map { |id| Mood.find(id) }
+    
     if @thought.save
       render json: @thought, status: :created, location: @thought
     else
       render json: @thought.errors, status: :unprocessable_entity
     end
   end
-
+  
   # PATCH/PUT /thoughts/1
   def update
-    if @thought.update(thought_params)
+    if @thought.update(thought_params.except(:moods))
+      @thought.moods = thought_params[:moods].map { |id| Mood.find(id) }
+      
       render json: @thought
     else
       render json: @thought.errors, status: :unprocessable_entity
@@ -60,6 +63,6 @@ class ThoughtsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def thought_params
-      params.require(:thought).permit(:title, :content, :user_id)
+      params.require(:thought).permit(:title, :content, :user_id, moods:[])
     end
 end

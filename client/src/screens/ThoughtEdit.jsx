@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
+import { getOneThought } from '../services/thoughts';
 
 function ThoughtEdit(props) {
   const { id } = useParams();
@@ -10,13 +11,18 @@ function ThoughtEdit(props) {
     content: ''
   })
 
+  const { moods } = props
+
+  const [chosenMoods, setChosenMoods] = useState([])
+
   useEffect(() => {
-    const prefillForm = () => {
-      const thoughtItem = props.thoughts.find(thought => thought.id === Number(id));
+    const prefillForm = async () => {
+      const thoughtItem = await getOneThought(id);
       setFormData({
         title: thoughtItem.title,
         content: thoughtItem.content
       })
+      setChosenMoods(thoughtItem.moods.map((mood) => mood.id))
     }
     if (props.thoughts.length) {
       prefillForm();
@@ -31,9 +37,25 @@ function ThoughtEdit(props) {
     }))
   }
 
+  const handleCheckBoxChange = (e) => {
+    if (e.target.checked) {
+      setChosenMoods(prevState => [...prevState, parseInt(e.target.value)])
+    } else {
+      setChosenMoods(prevState => prevState.filter((id) => id !== parseInt(e.target.value)))
+    }
+  }
+
+  const saveThought = (e) => {
+    e.preventDefault();
+    props.handleUpdate(id, {
+      ...formData,
+      moods: chosenMoods
+    })
+  }
+
   return (
     <div>
-      <form>
+      <form onSubmit={saveThought}>
       <h3>Polish</h3>
       <label>Title:
         <input
@@ -50,11 +72,20 @@ function ThoughtEdit(props) {
           value={formData.content}
           onChange={handleChange}
         />
-      </label>
-        <button onClick={(e) => {
-          e.preventDefault();
-          props.handleUpdate(id, formData)
-        }}>Save It</button>
+        </label>
+        {
+        moods.map((mood) => (
+          <label>{mood.name}
+            <input
+              type='checkbox'
+              checked={chosenMoods.includes(mood.id)}
+              value={mood.id}
+              onChange={handleCheckBoxChange}
+            />
+          </label>
+        ))
+      }
+        <button>Save It</button>
         <button onClick={(e) => {
           e.preventDefault();
           props.handleDelete(id);

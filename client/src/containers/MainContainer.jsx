@@ -23,8 +23,10 @@ function MainContainer(props) {
       const thoughtsData = await getAllThoughts();
       setThoughts(thoughtsData)
     }
-    fetchThoughts()
-  }, [])
+    if (currentUser) {
+      fetchThoughts()
+    }
+  }, [currentUser])
   
   useEffect(() => {
     const fetchMoods = async () => {
@@ -56,6 +58,17 @@ function MainContainer(props) {
 
   return (
     <Switch>
+      <Route path='/thoughts/:id/edit'>
+        <ThoughtEdit
+          thoughts={thoughts}
+          handleUpdate={handleUpdate}
+          handleDelete={handleDelete}
+          moods={moods}
+        />
+      </Route>
+      <Route path='/thoughts/:id'>
+        <ThoughtDetail handleDelete={handleDelete}/>
+      </Route>
       <Route exact path='/thoughts'>
         <Thoughts
           thoughts={thoughts}
@@ -64,27 +77,17 @@ function MainContainer(props) {
           currentUser={currentUser}
         />
       </Route>
-      <Route path='/thoughts/:id/edit'>
-        <ThoughtEdit
-          thoughts={thoughts}
-          handleUpdate={handleUpdate}
-          handleDelete={handleDelete}
-        />
-      </Route>
-      <Route path='/thoughts/new'>
-        <ThoughtCreate
-          handleCreate={handleCreate}
-          moods={moods}
-        />
-      </Route>
-      <Route path='/thoughts/:id'>
-        <ThoughtDetail handleDelete={handleDelete}/>
-      </Route>
       <Route path='/register'>
         <Register handleRegister={props.handleRegister}/>
       </Route>
       <Route path='/about'>
         <About moods={moods}/>
+      </Route>
+      <Route path='/'>
+        <ThoughtCreate
+          handleCreate={handleCreate}
+          moods={moods}
+        />
       </Route>
     </Switch>
   );

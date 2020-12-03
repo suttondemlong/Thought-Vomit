@@ -21,6 +21,7 @@ function ThoughtDetail(props) {
     <div>
       <h3>{thoughtItem?.title}</h3>
       <p>{thoughtItem?.content}</p>
+      <p>{thoughtItem?.moods.map((mood) => (mood.name))}</p>
       <Link to={`/thoughts/${thoughtItem?.id}/edit`}><button>Polish</button></Link>
       <button onClick={(e) => {
         e.preventDefault();
