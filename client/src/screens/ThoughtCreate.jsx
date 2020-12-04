@@ -10,7 +10,6 @@ function ThoughtCreate(props) {
   })
 
   const [chosenMoods, setChosenMoods] = useState([])
-  const [moods, setMoods] = useState([])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
