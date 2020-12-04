@@ -16,9 +16,12 @@ font-family: 'Special Elite', cursive; */
 
 .header-container {
   padding: 30px;
+  height: 75px;
+  align-content: space-between;
 }
 .title {
   font-family: "Special Elite";
+  color: #3c3a8d;
 }
 
 .sub-title {
@@ -30,18 +33,19 @@ font-family: 'Special Elite', cursive; */
   text-decoration: none;
   color: #368c44;
   font-size: 40px;
-  margin: 20px 30px;
+  margin: 30px;
 }
 
 .navLink {
   flex-flow: row;
   text-decoration: none;
-  padding: 20px;
+  margin: 20px 40px;
   font-family: "Changa", sans-serif;
+  color: #3c3a8d;
 }
 
 .navBar {
-  justify-content: space-between;
+  margin-top: 20px;
 }
 
 .thoughts-container {
@@ -71,7 +75,8 @@ p {
   margin: 0 auto;
 }
 
-.login-container {
+.login-container,
+.signup-container {
   height: 100vh;
 }
 
@@ -98,7 +103,8 @@ input {
 }
 
 #password-label,
-#username-label {
+#username-label,
+#email-label {
   text-align: left;
   font-family: "Changa";
 }
@@ -108,20 +114,28 @@ input {
   margin: 20px 10px;
 }
 
+#submit-button {
+  margin: 20px auto;
+}
+
 #signup-link {
   color: #5f826f;
 }
 
 .button {
-  padding: 5px;
   width: 100px;
+  padding: 5px;
   background-color: #e3d3a0;
   border: none;
   color: #5f826f;
   font-family: "IBM Plex Mono", monospace;
   font-weight: 600;
+  -webkit-appearance: none;
+  cursor: pointer;
+  border-radius: 3px;
 }
 
-.button :hover {
+.button:hover,
+.button:focus {
   background-color: #f9edc7;
 }
