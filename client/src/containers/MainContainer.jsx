@@ -87,6 +87,7 @@ function MainContainer(props) {
         <ThoughtCreate
           handleCreate={handleCreate}
           moods={moods}
+          currentUser={currentUser}
         />
       </Route>
     </Switch>

@@ -16,32 +16,34 @@ function Register(props) {
   }
 
   return (
-    <div>
-      <h3>New Account</h3>
+    <div className='signup-container'>
+      <h3 className='title'>New Account</h3>
       <form onSubmit={(e) => {
       e.preventDefault();
       props.handleRegister(formData);
     }}>
-      <h3>Register</h3>
-      <label>Username:
+        <label id="username-label">Username:
+           <br/>
         <input
           type='text'
           name='username'
           value={formData.username}
           onChange={handleChange}
-        />
+          />
       </label>
       <br />
-      <label>Email:
+      <label id="email-label">Email:
+          <br/>
         <input
           type='text'
           name='email'
           value={formData.email}
           onChange={handleChange}
-        />
+          />
       </label>
       <br />
-      <label>Password:
+      <label id="password-label">Password:
+          <br/>
         <input
           type='password'
           name='password'
@@ -50,7 +52,7 @@ function Register(props) {
         />
       </label>
       <br />
-      <button>Submit</button>
+      <button className='button' id='submit-button'>submit</button>
     </form>
     </div>
   );

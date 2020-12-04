@@ -54,43 +54,57 @@ function ThoughtEdit(props) {
   }
 
   return (
-    <div>
+    <div className="polish-container">
       <form onSubmit={saveThought}>
-      <h3>Polish</h3>
-      <label>Title:
+        <label>
+        <br/>
         <input
+          className="edit-title"
           type='text'
           name='title'
           value={formData.title}
           onChange={handleChange}
         />
       </label>
-      <label>
-        <input
-          type='textarea'
-          name='content'
-          value={formData.content}
-          onChange={handleChange}
-        />
-        </label>
-        {
-        moods.map((mood) => (
-          <label>{mood.name}
-            <input
-              type='checkbox'
-              checked={chosenMoods.includes(mood.id)}
-              value={mood.id}
-              onChange={handleCheckBoxChange}
+      <div className='text-checkbox'>
+        <div >
+          <label>
+            <textarea
+              className="text-area"
+              name='content'
+              cols='40'
+              rows='20'
+              value={formData.content}
+              onChange={handleChange}
             />
           </label>
-        ))
-      }
-        <button>Save It</button>
-        <button onClick={(e) => {
+        </div>
+        <div className='checkboxes'>  
+          {
+          moods.map((mood) => (
+            <label className="checkbox-label">
+              <input
+                className="checkbox-input"
+                type='checkbox'
+                checked={chosenMoods.includes(mood.id)}
+                value={mood.id}
+                onChange={handleCheckBoxChange}
+              />
+              {mood.name}
+            </label>
+            ))
+          }   
+        </div>
+      </div>
+        <button className="button" id="keep-button">save</button>
+        <button
+          className="button"
+          id="trash-button"
+          onClick={(e) => {
           e.preventDefault();
           props.handleDelete(id);
           history.push('/thoughts');
-        }}>Delete</button>
+        }}>trash</button>
     </form>
     </div>
   );

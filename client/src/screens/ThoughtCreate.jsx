@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { addMood } from '../services/moods';
 
 function ThoughtCreate(props) {
@@ -44,32 +45,47 @@ function ThoughtCreate(props) {
   }
 
   return (
-    <form onSubmit={saveThought}>
-      <h3 className="title">Create</h3>
-      <label>
-        <textarea
-          name='content'
-          cols='40'
-          rows='20'
-          value={formData.content}
-          onChange={handleChange}
-        />
-      </label>
-      {
-        moods.map((mood) => (
-          <label>{mood.name}
-            <input
-              type='checkbox'
-              value={mood.id}
-              onChange={handleCheckBoxChange}
+    <div className="thought-create-container">
+    <h3 className="title">Create</h3>
+      <form className='create-container' onSubmit={saveThought}>
+      <div className='text-checkbox'>    
+        <div>     
+          <label>
+              <textarea
+              className="text-area"
+              name='content'
+              cols='40'
+              rows='20'
+              value={formData.content}
+              onChange={handleChange}
             />
           </label>
-        ))
+        </div>
+        <div className='checkboxes'>
+        {
+          moods.map((mood) => (
+            <label className="checkbox-label">
+              <input
+                className="checkbox-input"
+                type='checkbox'
+                value={mood.id}
+                onChange={handleCheckBoxChange}
+              />
+              {mood.name}
+            </label>
+          ))
+        }
+        </div>
+      </div>
+      <br />
+      {
+      props.currentuser ? 
+          <button className="button" id="keep-button">keep</button> :
+          <button className="button" id="keep-button"><Link className="link" id='keep-link' to="/login">keep</Link></button>
       }
-      <br/>
-      <button>keep</button>
-      <button onClick={trashThought}>Trash</button>
+      <button className="button" id="trash-button" onClick={trashThought}>trash</button>
     </form>
+    </div>
   );
 }
 
