@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { getAllMoods } from '../services/moods'; 
 
 function ThoughtCreate(props) {
-  const { moods } = props
+  const { moods, currentUser } = props
   const [formData, setFormData] = useState({
     title: 'Untitled',
     content: ''
@@ -77,7 +77,7 @@ function ThoughtCreate(props) {
       </div>
       <br />
       {
-      props.currentUser ? 
+      currentUser ? 
             <button className="button" id="keep-button">keep</button>
             :
             <button
