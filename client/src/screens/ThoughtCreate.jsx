@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { addMood } from '../services/moods';
 
 function ThoughtCreate(props) {
   const { moods } = props
