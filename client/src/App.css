@@ -79,7 +79,10 @@ a {
 
 .thought-content {
   width: 250px;
+  height: 125px;
   font-size: 14px;
+  color: #3c3a8d;
+  overflow: auto;
 }
 
 p {
