@@ -16,13 +16,14 @@ function Login(props) {
   }
 
   return (
-    <div>
+    <div className="login-container">
     <form onSubmit={(e) => {
       e.preventDefault();
       props.handleLogin(formData);
     }}>
-      <h3>Login</h3>
-      <label>Username:
+      <h3 className='title'>Login</h3>
+      <label id="username-label">Username:
+      <br/>  
        <input
           type='text'
           name='username'
@@ -31,7 +32,8 @@ function Login(props) {
           />
       </label>
       <br/>
-      <label>Password:
+      <label id="password-label">Password:
+      <br/>
        <input
           type='password'
           name='password'
@@ -40,9 +42,11 @@ function Login(props) {
         />
       </label>
       <br />
-      <button>Submit</button>
+      <div>
+        <button className="button" id="login-button">Login</button>
+        <button className="button" id="signup-button"><Link className="link" id="signup-link" to="/register">Sign Up</Link></button>
+      </div>
     </form>
-    <Link to="/register">Create New Account</Link>
     </div>
 
   );

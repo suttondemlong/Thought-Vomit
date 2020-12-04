@@ -1,4 +1,4 @@
-/* font-family: 'Changa', sans-serif;
+/* font-family: 'Changa';
 font-family: 'IBM Plex Mono', monospace;
 font-family: 'Special Elite', cursive; */
 
@@ -6,7 +6,12 @@ font-family: 'Special Elite', cursive; */
   text-align: center;
   background-image: url("https://images.unsplash.com/photo-1586076100131-32505c71d0d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80");
   background-size: 100vw;
-  height: 100vh;
+  height: 100%;
+  padding: 0 10%;
+}
+
+.link {
+  text-decoration: none;
 }
 
 .header-container {
@@ -16,8 +21,9 @@ font-family: 'Special Elite', cursive; */
   font-family: "Special Elite";
 }
 
-.subtitle {
-  font-family: "Changa", sans-serif;
+.sub-title {
+  font-family: "Changa";
+  font-weight: 700;
 }
 
 #page-title {
@@ -45,4 +51,77 @@ font-family: 'Special Elite', cursive; */
 .thoughts {
   display: flex;
   width: 250px;
+}
+
+p {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.about-text {
+  padding: 0 10%;
+  line-height: 2;
+}
+
+.moods-container {
+  margin: 0 auto;
+}
+
+.mood-card {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.login-container {
+  height: 100vh;
+}
+
+form {
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+label {
+  color: #3c3a8d;
+  display: inline-block;
+  font-size: 14px;
+}
+
+input {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  outline: none;
+  border: 1.5px solid #5f826f;
+  border-radius: 4%;
+  padding: 3px 5px;
+  width: 250px;
+  opacity: 32%;
+}
+
+#password-label,
+#username-label {
+  text-align: left;
+  font-family: "Changa";
+}
+
+#login-button,
+#signup-button {
+  margin: 20px 10px;
+}
+
+#signup-link {
+  color: #5f826f;
+}
+
+.button {
+  padding: 5px;
+  width: 100px;
+  background-color: #e3d3a0;
+  border: none;
+  color: #5f826f;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 600;
+}
+
+.button :hover {
+  background-color: #f9edc7;
 }
