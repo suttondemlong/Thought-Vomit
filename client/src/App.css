@@ -10,7 +10,7 @@ font-family: 'Special Elite', cursive; */
   padding: 0 10%;
 }
 
-.link {
+a {
   text-decoration: none;
 }
 
@@ -36,12 +36,21 @@ font-family: 'Special Elite', cursive; */
   margin: 30px;
 }
 
+#page-title:hover {
+  color: #083e11;
+}
+
 .navLink {
   flex-flow: row;
   text-decoration: none;
   margin: 20px 40px;
   font-family: "Changa", sans-serif;
   color: #3c3a8d;
+  cursor: pointer;
+}
+
+.navLink:hover {
+  color: #7675bd;
 }
 
 .navBar {
@@ -118,7 +127,8 @@ input {
   margin: 20px auto;
 }
 
-#signup-link {
+#signup-link,
+#keep-link {
   color: #5f826f;
 }
 
@@ -138,4 +148,27 @@ input {
 .button:hover,
 .button:focus {
   background-color: #f9edc7;
+}
+
+.text-checkbox {
+  display: flex;
+  justify-content: center;
+}
+
+.checkboxes {
+  margin: auto 10px;
+  width: 150px;
+  flex-direction: column;
+  text-align: left;
+}
+
+.checkbox-input {
+  display: inline;
+  width: 20px;
+}
+
+.checkbox-label {
+  margin: 10px;
+  width: 125px;
+  font-family: "IBM Plex Mono", monospace;
 }

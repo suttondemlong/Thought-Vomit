@@ -43,8 +43,14 @@ function Login(props) {
       </label>
       <br />
       <div>
-        <button className="button" id="login-button">Login</button>
-        <button className="button" id="signup-button"><Link className="link" id="signup-link" to="/register">Sign Up</Link></button>
+        <button className="button" id="login-button">login</button>
+          <button
+            className="button"
+            id="signup-button">
+            <Link
+              className="link"
+              id="signup-link"
+              to="/register">sign up</Link></button>
       </div>
     </form>
     </div>

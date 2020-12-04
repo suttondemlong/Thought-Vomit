@@ -45,36 +45,46 @@ function ThoughtCreate(props) {
   }
 
   return (
-    <form onSubmit={saveThought}>
-      <h3 className="title">Create</h3>
-      <label>
-        <textarea
-          name='content'
-          cols='40'
-          rows='20'
-          value={formData.content}
-          onChange={handleChange}
-        />
-      </label>
-      {
-        moods.map((mood) => (
-          <label>{mood.name}
-            <input
-              type='checkbox'
-              value={mood.id}
-              onChange={handleCheckBoxChange}
+    <div>
+    <h3 className="title">Create</h3>
+      <form className='create-container' onSubmit={saveThought}>
+      <div className='text-checkbox'>    
+        <div>     
+          <label className="text-area">
+            <textarea
+              name='content'
+              cols='40'
+              rows='20'
+              value={formData.content}
+              onChange={handleChange}
             />
           </label>
-        ))
-      }
+        </div>
+        <div className='checkboxes'>
+        {
+          moods.map((mood) => (
+            <label className="checkbox-label">
+              <input
+                className="checkbox-input"
+                type='checkbox'
+                value={mood.id}
+                onChange={handleCheckBoxChange}
+              />
+              {mood.name}
+            </label>
+          ))
+        }
+        </div>
+      </div>
       <br />
       {
       props.currentuser ? 
-          <button>keep</button> :
-          <Link to="/login"><button>keep</button></Link>
+          <button className="button">keep</button> :
+          <button className="button"><Link className="link" id='keep-link' to="/login">keep</Link></button>
       }
-      <button onClick={trashThought}>Trash</button>
+      <button className="button" onClick={trashThought}>trash</button>
     </form>
+    </div>
   );
 }
 

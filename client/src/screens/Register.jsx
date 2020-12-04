@@ -52,7 +52,7 @@ function Register(props) {
         />
       </label>
       <br />
-      <button className='button' id='submit-button'>Submit</button>
+      <button className='button' id='submit-button'>submit</button>
     </form>
     </div>
   );
