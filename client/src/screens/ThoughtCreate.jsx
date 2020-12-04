@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { getAllMoods } from '../services/moods'; 
 
 function ThoughtCreate(props) {
-  // const { moods } = props
+  const { moods } = props
   const [formData, setFormData] = useState({
     title: 'Untitled',
     content: ''
@@ -11,14 +11,6 @@ function ThoughtCreate(props) {
 
   const [chosenMoods, setChosenMoods] = useState([])
   const [moods, setMoods] = useState([])
-
-    useEffect(() => {
-    const fetchMoods = async () => {
-      const moodData = await getAllMoods();
-      setMoods(moodData)
-    }
-    fetchMoods()
-  }, [])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -69,7 +61,7 @@ function ThoughtCreate(props) {
           </label>
         </div>
         <div className='checkboxes'>
-        { moods && 
+        {
           moods.map((mood) => (
             <label className="checkbox-label" key={mood.id}>
               <input

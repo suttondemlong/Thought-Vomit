@@ -6,7 +6,6 @@ import ThoughtCreate from '../screens/ThoughtCreate';
 import ThoughtEdit from '../screens/ThoughtEdit';
 import Register from '../screens/Register';
 import ThoughtDetail from '../screens/ThoughtDetail'
-// import Moods from '../components/Moods'
 import About from '../screens/About'
 import { destroyThought, getAllThoughts, postThought, putThought } from '../services/thoughts';
 import { getAllMoods } from '../services/moods';
@@ -86,6 +85,7 @@ function MainContainer(props) {
       <Route path='/'>
         <ThoughtCreate
           handleCreate={handleCreate}
+          moods={moods}
         />
       </Route>
     </Switch>
