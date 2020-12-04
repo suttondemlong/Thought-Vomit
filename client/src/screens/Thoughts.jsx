@@ -9,38 +9,36 @@ function Thoughts({ currentUser, thoughts, handleDelete }) {
       <div className="thoughts-container">
       {
         thoughts.map(thought => (
-          <>
-            <React.Fragment key={thought.id}>
-              <div className="thoughts">
-              {
-                thought.user_id === currentUser?.id &&
-                <div className="one-thought">
+          <React.Fragment key={thought.id}>
+            <div className="thoughts">
+            {
+              thought.user_id === currentUser?.id &&
+              <div className="one-thought">
+                <Link
+                  id="thought-title-link"
+                  to={`/thoughts/${thought.id}`}>
+                  <p className="subtitle">{thought.title}</p>
+                </Link>
+                <p className="thought-content">{thought.content}</p>
+                <button
+                  className="button"
+                  id="keep-button">
                   <Link
-                    id="thought-title-link"
-                    to={`/thoughts/${thought.id}`}>
-                    <p className="subtitle">{thought.title}</p>
-                  </Link>
-                  <p className="thought-content">{thought.content}</p>
-                  <button
-                    className="button"
-                    id="keep-button">
-                    <Link
-                      className="polish-link"
-                      to={`/thoughts/${thought.id}/edit`} >
-                      Polish
-                      </Link>
-                  </button>
-                  <button
-                    className="button"
-                    id="trash-button"
-                    onClick={() => handleDelete(thought.id)}>
-                    Delete
-                  </button>
-                </div>
-              }
-               </div>
-              </React.Fragment>
-          </>
+                    className="polish-link"
+                    to={`/thoughts/${thought.id}/edit`} >
+                    Polish
+                    </Link>
+                </button>
+                <button
+                  className="button"
+                  id="trash-button"
+                  onClick={() => handleDelete(thought.id)}>
+                  Delete
+                </button>
+              </div>
+            }
+              </div>
+            </React.Fragment>
         ))
       }
       </div>
