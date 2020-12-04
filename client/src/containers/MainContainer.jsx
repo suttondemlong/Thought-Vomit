@@ -86,8 +86,6 @@ function MainContainer(props) {
       <Route path='/'>
         <ThoughtCreate
           handleCreate={handleCreate}
-          moods={moods}
-          currentUser={currentUser}
         />
       </Route>
     </Switch>
