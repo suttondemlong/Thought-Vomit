@@ -78,9 +78,13 @@ function ThoughtCreate(props) {
       </div>
       <br />
       {
-      props.currentuser ? 
-          <button className="button" id="keep-button">keep</button> :
-          <button className="button" id="keep-button"><Link className="link" id='keep-link' to="/login">keep</Link></button>
+      props.currentUser ? 
+            <button className="button" id="keep-button">keep</button>
+            :
+            <button
+              className="button"
+              id="keep-button">
+              <Link className="link" id='keep-link' to="/login">keep</Link></button>
       }
       <button className="button" id="trash-button" onClick={trashThought}>trash</button>
     </form>
