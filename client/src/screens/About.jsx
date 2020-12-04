@@ -4,7 +4,7 @@ import '../App.css';
 function About(props) {
   return (
     <div className="about">
-      <h3 className="sub-title">What is this?</h3>
+      <h3 className="title" id="about-title">What is this?</h3>
       <p className="about-text">
         Thought Vomit is a tool for getting started in the creative process.
         It’s like a blind contour/free-association/stream of consciousness journal.
@@ -16,7 +16,7 @@ function About(props) {
         {props.moods.map(mood => (
           <div className="mood-card">
             <h4 className="sub-title" id="mood-name">{mood.name}</h4>
-            <p className="text-body">{mood.description}</p>
+            <p className="mood-text">{mood.description}</p>
           </div>
         ))}
       </div>

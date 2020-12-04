@@ -63,7 +63,7 @@ function ThoughtCreate(props) {
         <div className='checkboxes'>
         {
           moods.map((mood) => (
-            <label className="checkbox-label">
+            <label className="checkbox-label" key={mood.id}>
               <input
                 className="checkbox-input"
                 type='checkbox'
