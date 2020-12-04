@@ -18,6 +18,8 @@ a {
   padding: 30px;
   height: 75px;
   align-content: space-between;
+  width: 70%;
+  margin: 0 auto;
 }
 .title {
   font-family: "Special Elite";
@@ -43,10 +45,11 @@ a {
 .navLink {
   flex-flow: row;
   text-decoration: none;
-  margin: 20px 40px;
+  margin: 20px;
   font-family: "Changa", sans-serif;
   color: #3c3a8d;
   cursor: pointer;
+  align-content: space-around;
 }
 
 .navLink:hover {
@@ -58,12 +61,25 @@ a {
 }
 
 .thoughts-container {
+  width: 80vw;
+  height: 100vh;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .thoughts {
-  display: flex;
+  height: 250px;
   width: 250px;
+  background-color: rgb(255, 255, 255, 0.3);
+  border-radius: 5px;
+  padding: 8px;
+  margin: 10px 5px;
+}
+
+.thought-content {
+  width: 250px;
+  font-size: 14px;
 }
 
 p {
@@ -85,7 +101,8 @@ p {
 }
 
 .login-container,
-.signup-container {
+.signup-container,
+.polish-container {
   height: 100vh;
 }
 
@@ -105,10 +122,10 @@ input {
   font-size: 12px;
   outline: none;
   border: 1.5px solid #5f826f;
-  border-radius: 4%;
+  border-radius: 4px;
   padding: 3px 5px;
   width: 250px;
-  opacity: 32%;
+  background-color: rgb(255, 255, 255, 0.3);
 }
 
 #password-label,
@@ -128,7 +145,9 @@ input {
 }
 
 #signup-link,
-#keep-link {
+#keep-link,
+.polish-link,
+#thought-title-link {
   color: #5f826f;
 }
 
@@ -153,6 +172,20 @@ input {
 .text-checkbox {
   display: flex;
   justify-content: center;
+  margin-left: 19%;
+}
+
+.thought-create-container {
+  height: 100vh;
+}
+
+.text-area {
+  background-color: rgb(255, 255, 255, 0.3);
+  font-family: "IBM Plex Mono", monospace;
+  border: 1.5px solid #083e11;
+  border-radius: 5px;
+  color: #083e11;
+  padding: 15px;
 }
 
 .checkboxes {
@@ -165,10 +198,26 @@ input {
 .checkbox-input {
   display: inline;
   width: 20px;
+  background-color: rgb(255, 255, 255, 0.3);
 }
 
 .checkbox-label {
   margin: 10px;
   width: 125px;
   font-family: "IBM Plex Mono", monospace;
+}
+
+#keep-button,
+#trash-button {
+  margin: 10px;
+  margin-bottom: 50px;
+}
+
+.edit-title {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 30px;
+  opacity: 50%;
+  color: #3c3a8d;
+  font-family: "Changa";
 }

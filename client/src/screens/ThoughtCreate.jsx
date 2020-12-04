@@ -45,13 +45,14 @@ function ThoughtCreate(props) {
   }
 
   return (
-    <div>
+    <div className="thought-create-container">
     <h3 className="title">Create</h3>
       <form className='create-container' onSubmit={saveThought}>
       <div className='text-checkbox'>    
         <div>     
-          <label className="text-area">
-            <textarea
+          <label>
+              <textarea
+              className="text-area"
               name='content'
               cols='40'
               rows='20'
@@ -79,10 +80,10 @@ function ThoughtCreate(props) {
       <br />
       {
       props.currentuser ? 
-          <button className="button">keep</button> :
-          <button className="button"><Link className="link" id='keep-link' to="/login">keep</Link></button>
+          <button className="button" id="keep-button">keep</button> :
+          <button className="button" id="keep-button"><Link className="link" id='keep-link' to="/login">keep</Link></button>
       }
-      <button className="button" onClick={trashThought}>trash</button>
+      <button className="button" id="trash-button" onClick={trashThought}>trash</button>
     </form>
     </div>
   );
