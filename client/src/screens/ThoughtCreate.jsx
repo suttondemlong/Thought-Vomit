@@ -63,7 +63,7 @@ function ThoughtCreate(props) {
         <div className='checkboxes'>
         {
           moods.map((mood) => (
-            <label className="checkbox-label">
+            <label className="checkbox-label" key={mood.id}>
               <input
                 className="checkbox-input"
                 type='checkbox'
@@ -78,7 +78,7 @@ function ThoughtCreate(props) {
       </div>
       <br />
       {
-      props.currentuser ? 
+      props.currentUser ? 
           <button className="button" id="keep-button">keep</button> :
           <button className="button" id="keep-button"><Link className="link" id='keep-link' to="/login">keep</Link></button>
       }

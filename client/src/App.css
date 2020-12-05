@@ -1,6 +1,7 @@
 /* font-family: 'Changa';
 font-family: 'IBM Plex Mono', monospace;
 font-family: 'Special Elite', cursive; */
+@import url(https://jsbin-user-assets.s3.amazonaws.com/rafaelcastrocouto/password.ttf);
 
 .App {
   text-align: center;
@@ -18,7 +19,7 @@ a {
   padding: 30px;
   height: 75px;
   align-content: space-between;
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
 }
 .title {
@@ -44,10 +45,11 @@ a {
 
 .navLink {
   flex-flow: row;
+  width: 100px;
   text-decoration: none;
-  margin: 20px;
+  margin: 10px auto;
   font-family: "Changa", sans-serif;
-  color: #3c3a8d;
+  color: #2e4283;
   cursor: pointer;
   align-content: space-around;
 }
@@ -57,7 +59,9 @@ a {
 }
 
 .navBar {
-  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .thoughts-container {
@@ -65,7 +69,7 @@ a {
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .thoughts {
@@ -81,7 +85,7 @@ a {
   width: 250px;
   height: 125px;
   font-size: 14px;
-  color: #3c3a8d;
+  color: #2e4283;
   overflow: auto;
 }
 
@@ -89,9 +93,24 @@ p {
   font-family: "IBM Plex Mono", monospace;
 }
 
+#about-title {
+  color: #2e4283;
+}
+
 .about-text {
   padding: 0 10%;
   line-height: 2;
+  color: #083e11;
+}
+
+.mood-text {
+  margin: 10px auto 20px;
+  color: #083e11;
+}
+
+#mood-name {
+  margin: 20px auto 0px;
+  color: #2e4283;
 }
 
 .moods-container {
@@ -115,7 +134,7 @@ form {
 }
 
 label {
-  color: #3c3a8d;
+  color: #2e4283;
   display: inline-block;
   font-size: 14px;
 }
@@ -221,6 +240,6 @@ input {
   font-size: 20px;
   margin-bottom: 30px;
   opacity: 50%;
-  color: #3c3a8d;
+  color: #2e4283;
   font-family: "Changa";
 }
