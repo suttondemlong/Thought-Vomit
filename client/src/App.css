@@ -1,6 +1,7 @@
 /* font-family: 'Changa';
 font-family: 'IBM Plex Mono', monospace;
 font-family: 'Special Elite', cursive; */
+@import url(https://jsbin-user-assets.s3.amazonaws.com/rafaelcastrocouto/password.ttf);
 
 .App {
   text-align: center;
