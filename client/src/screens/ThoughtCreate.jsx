@@ -76,7 +76,6 @@ function ThoughtCreate(props) {
       </div>
       <br />
       {
-<<<<<<< HEAD
       currentUser ? 
             <button className="button" id="keep-button">keep</button>
             :
@@ -84,11 +83,6 @@ function ThoughtCreate(props) {
               className="button"
               id="keep-button">
               <Link className="link" id='keep-link' to="/login">keep</Link></button>
-=======
-        props.currentUser ? 
-        <button className="button" id="keep-button">keep</button> :
-        <button className="button" id="keep-button"><Link className="link" id='keep-link' to="/login">keep</Link></button>
->>>>>>> develop
       }
       <button className="button" id="trash-button" onClick={trashThought}>trash</button>
       </form>
