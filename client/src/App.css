@@ -213,7 +213,7 @@ input {
   color: #083e11;
   padding: 15px;
   overflow: auto;
-  width: 300px;
+  width: 35vw;
   height: 300px;
 }
 
@@ -299,14 +299,14 @@ input {
   }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1200px) {
   #page-title {
     font-size: 50px;
     /* margin-left: 0;
     margin-right: 0; */
   }
   .text-area {
-    width: 30vw;
+    width: 40vw;
   }
   .text-checkbox {
     margin-left: 15%;
