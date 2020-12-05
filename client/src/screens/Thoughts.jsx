@@ -10,9 +10,9 @@ function Thoughts({ currentUser, thoughts, handleDelete }) {
       {
         thoughts.map(thought => (
           <React.Fragment key={thought.id}>
-            <div className="thoughts">
             {
               thought.user_id === currentUser?.id &&
+              <div className="thoughts">
               <div className="one-thought">
                 <Link
                   id="thought-title-link"
@@ -36,8 +36,8 @@ function Thoughts({ currentUser, thoughts, handleDelete }) {
                   Delete
                 </button>
               </div>
-            }
               </div>
+            }
             </React.Fragment>
         ))
       }

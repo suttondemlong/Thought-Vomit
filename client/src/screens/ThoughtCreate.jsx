@@ -50,6 +50,7 @@ function ThoughtCreate(props) {
           <label>
               <textarea
               className="text-area"
+              id="create-text-area"
               name='content'
               cols='40'
               rows='20'

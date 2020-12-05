@@ -27,7 +27,7 @@ function ThoughtEdit(props) {
     if (props.thoughts.length) {
       prefillForm();
     }
-  }, [props.foods])
+  }, [props.thoughts.length, id])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
