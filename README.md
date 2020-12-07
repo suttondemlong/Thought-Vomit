@@ -99,8 +99,6 @@ Main font options:
 src
 |__ components/
       |__ Header.jsx
-      |__ Moods.jsx
-      |__ Thought.jsx
 |__ containers/
       |__ MainContainer.jsx
 |__ layouts/
@@ -156,5 +154,27 @@ src
 ---
 
 ## Code Showcase
+
+```
+return (
+    <div className='header-container'>
+      <Link to='/' className="title" id="page-title">Thought Vomit</Link>
+      <div className='navBar'>
+        <Link className='navLink' to='/about'>What is this?</Link>
+        {
+          currentUser ?
+          <Link className='navLink' to='/thoughts'>Thoughts</Link> :
+          <Link className='navLink' to='/login'>Thoughts</Link>
+        }
+        {
+          currentUser ?
+            <Link className='navLink' to='/' onClick={handleLogout}>Logout</Link>
+            :
+            <Link className='navLink' to='/login'>Login</Link>
+        }
+      </div>
+    </div>
+  );
+```
 
 ## Code Issues & Resolutions
