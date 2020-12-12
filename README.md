@@ -5,7 +5,6 @@
 ## Table of Contents
 
 - [Overview](#overview)
-- [MVP](#mvp)
   - [Goals](#goals)
   - [Libraries and Dependencies](#libraries-and-dependencies)
   - [Client (Front End)](#client-front-end)
@@ -31,14 +30,6 @@
 - Fury
 - Musing
 - Melancholy
-
-<br>
-
-## MVP
-
-> The Minimum Viable Product should be a well-planned, easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
-
-The **Thought Vomit** MVP will have the concept of a user with secure login functionality. The user will be able to create and save Thought Vomits to their account, edit them and delete them. When typing in the initial thought creation text-area, text will be obscured as the user types.
 
 <br>
 
@@ -119,39 +110,13 @@ src
 
 ```
 
-#### Time Estimates
-
-> Use this section to estimate the time necessary to build out each of the components you've described above.
-
-| Task                                  | Priority | Estimated Time | Time Invested | Actual Time |
-| ------------------------------------- | :------: | :------------: | :-----------: | :---------: |
-| Ruby models and controllers           |    H     |     4 hrs      |     4 hrs     |     TBD     |
-| Ruby migration and seed data          |    H     |     4 hrs      |     6 hrs     |     TBD     |
-| Create services, layout               |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| Build out ThoughtCreate               |    H     |     2 hrs      |     4 hrs     |     TBD     |
-| Login/Auth                            |    H     |     4 hrs      |     4 hrs     |     TBD     |
-| Thoughts, ThoughtDetail, Thought Edit |    H     |     8 hrs      |    10 hrs     |     TBD     |
-| About Page                            |    H     |     4 hrs      |     2 hrs     |     TBD     |
-| CSS                                   |    H     |     8 hrs      |     8 hrs     |     TBD     |
-| TOTAL                                 |          |     37 hrs     |    39 hrs     |     TBD     |
-
-<br>
-
 ### Server (Back End)
 
 #### ERD Model
 
 [ERD](https://drive.google.com/file/d/1S506bp05vg0SCxrGtLBrwBqVYLWdbqRA/view?usp=sharing)
 
-<br>
-
----
-
-## Post-MVP
-
-> Post-MVP goals would be a public, anonymous space for users to publish their "thoughts". Another, more achievable option would be to organize the "thoughts" dashboard by mood, chronologically.
-
----
+## <br>
 
 ## Code Showcase
 
@@ -176,5 +141,3 @@ return (
     </div>
   );
 ```
-
-## Code Issues & Resolutions
